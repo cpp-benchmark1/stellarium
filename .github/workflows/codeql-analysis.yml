@@ -35,8 +35,8 @@ jobs:
           libqt5svg5-dev libargon2-dev libminizip-dev libbotan-2-dev libqrencode-dev \
           libkeyutils-dev zlib1g-dev libreadline-dev libpcsclite-dev libusb-1.0-0-dev \
           libxi-dev libxtst-dev  libqt5x11extras5-dev
-        cmake -B build
-        cmake --build build -DWITH_XC_ALL=ON -DCMAKE_BUILD_TYPE=Release
+        cmake -B build -DWITH_XC_ALL=ON -DCMAKE_BUILD_TYPE=Release
+        cmake --build build
     - name: Free disk space
       run: |
           sudo docker rmi $(docker image ls -aq) >/dev/null 2>&1 || true
